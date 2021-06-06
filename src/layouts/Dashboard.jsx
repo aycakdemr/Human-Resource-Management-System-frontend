@@ -2,8 +2,8 @@ import React from 'react'
 import { Grid ,Button} from 'semantic-ui-react'
 import JobAdvertisementList from '../pages/JobAdvertisementList'
 import Cities from './Cities'
+import CompanySector from './CompanySector'
 import EducationLevel from './EducationLevel'
-import Employers from './Employers'
 import JobPositions from './JobPositions'
 import PositionLevels from './PositionLevels'
 import WayOfWorkings from './WayOfWorkings'
@@ -17,7 +17,7 @@ export default function Dashboard() {
                     <br></br>
                         <JobPositions/>
                         <br></br>
-                        <Employers/>
+                        <CompanySector/>
                         <br></br>
                         <Cities/>
                         <br></br>

@@ -1,6 +1,6 @@
 import axios from "axios"
 export default class EmployerService{
-    getEmployers(){
+    getAll(){
         return axios.get("http://localhost:8080/api/employers/getall")
     }
 }

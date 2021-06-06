@@ -9,7 +9,7 @@ export default function Employers() {
   useEffect(() => {
     let employersService = new EmployerService();
     employersService
-      .getEmployers()
+      .getAll()
       .then((result) => setEmployers(result.data.data));
   },[]);
   return (

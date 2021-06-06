@@ -7,7 +7,7 @@ export default function WayOfWorkings() {
   useEffect(() => {
     let wayOfWorkingService = new WayOfWorkingService();
     wayOfWorkingService
-      .getWays()
+      .getAll()
       .then((result) => setWayOfWorking(result.data.data));
   }, []);
   return (

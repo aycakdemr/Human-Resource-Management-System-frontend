@@ -8,7 +8,7 @@ export default function PositionLevels() {
     useEffect(() => {
         let positionLevelService = new PositionLevelService();
         positionLevelService
-          .getPositionLevels()
+          .getAll()
           .then((result) => setPositionLevels(result.data.data));
       },[]);
     return (

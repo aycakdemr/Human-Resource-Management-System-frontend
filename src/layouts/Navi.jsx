@@ -5,11 +5,14 @@ export default function Navi() {
     return (
         <div>
             <Menu size='large' inverted>
-        <Menu.Item
+        <Menu.Item href='/main'
           name='HRMS'
         />
-        <Menu.Item
+        <Menu.Item href='/JobSeekerList/getAll'
           name='İş Arayanlar'
+        />
+        <Menu.Item href='/EmployerList/getAll'
+          name='İş Verenler'
         />
 
         <Menu.Menu position='right'>
@@ -21,9 +24,13 @@ export default function Navi() {
             </Dropdown.Menu>
           </Dropdown>
 
+          <Menu.Item href='/CvLayout'>
+            <Button primary >Cv Islemleri</Button>
+          </Menu.Item>
           <Menu.Item>
             <Button primary>Sign Up</Button>
           </Menu.Item>
+
         </Menu.Menu>
       </Menu>
         </div>

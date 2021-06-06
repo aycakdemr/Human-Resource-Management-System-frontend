@@ -9,7 +9,7 @@ export default function Cities() {
   useEffect(() => {
     let cityService = new CityService();
     cityService
-      .getCities()
+      .getAll()
       .then((result) => setCities(result.data.data));
   },[]);
   return (

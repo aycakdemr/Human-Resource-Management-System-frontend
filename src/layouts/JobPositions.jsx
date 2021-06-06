@@ -9,7 +9,7 @@ export default function JobPositions() {
     useEffect(() => {
         let jobPositionService = new JobPositionService();
         jobPositionService
-          .getJobPositions()
+          .getAll()
           .then((result) => setJobPositions(result.data.data));
       },[]);
   return (

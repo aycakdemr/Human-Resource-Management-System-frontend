@@ -1,6 +1,6 @@
 import axios from "axios"
 export default class PositionLevelService{
-    getPositionLevels(){
+    getAll(){
         return axios.get("http://localhost:8080/api/positionlevels/getall")
     }
 }

@@ -10,7 +10,7 @@ export default function EducationLevel() {
     useEffect(() => {
         let educationLevelService = new EducationLevelService();
         educationLevelService
-          .getEducationLevels()
+          .getAll()
           .then((result) => setEducationLevels(result.data.data));
       },[]);
     return (

@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
         <Navi />
+        
         <MainPage/>
         <JobAdvertisementFavList/>
         <Footer/>

@@ -12,12 +12,11 @@ export default function WayOfWorkings() {
   }, []);
   return (
     <div>
-      <h3><mark>Çalışma Şekli</mark> </h3>
-      <Menu inverted vertical>
+      
         {wayofworkings.map((way) => (
           <Menu.Item key={way.id} name={way.name} />
         ))}
-      </Menu>
+      
     </div>
   );
 }

@@ -13,15 +13,15 @@ export default function CompanySector() {
       },[]);
     return (
         <div>
-             <h3><mark> Şirketin Sektörü</mark></h3>
-      <Menu inverted vertical>
+            
+    
           {companysectors.map((companySector) =>(
               
                 <Menu.Item key={companySector.id} name='enterprise' name={companySector.name} />
                
           ))}
         
-      </Menu>
+    
         </div>
     )
 }

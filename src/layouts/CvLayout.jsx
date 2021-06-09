@@ -9,7 +9,7 @@ export default function CvLayout() {
             
             <Menu pointing vertical>
                 <h3>
-              <mark>CV İslemleri</mark>
+              CV İslemleri
             </h3>
               <Menu.Item href="/AbilityList/getAll" name="Yetenekler" />
               <Menu.Item href="/LanguageList/getAll" name="Diller" />

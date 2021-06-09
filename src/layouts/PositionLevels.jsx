@@ -13,15 +13,13 @@ export default function PositionLevels() {
       },[]);
     return (
         <div>
-             <h3><mark>Pozisyon Seviyesi</mark> </h3>
-      <Menu inverted vertical>
+             
           {positionLevels.map((positionlevel) =>(
               
                 <Menu.Item key={positionlevel.id} name='enterprise' name={positionlevel.name} />
                
           ))}
         
-      </Menu>
         </div>
     )
 }

@@ -1,60 +1,92 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Image } from "semantic-ui-react";
-import JobAdvertisementService from "../services/jobAdvertisementService"
+
+import JobAdvertisementService from '../services/jobAdvertisementService';
+import {
+    Badge,
+    Button,
+    Card,
+    CardBody,
+    CardImg,
+    FormGroup,
+    Input,
+    InputGroupAddon,
+    InputGroupText,
+    InputGroup,
+    Container,
+    Row,
+    Col
+  } from "reactstrap";
 export default function JobAdvertisementList() {
-  const [jobadvertisements, setJobAdvertisements] = useState([]);
+    const [jobadvertisements, setJobAdvertisements] = useState([]);
 
-  useEffect(() => {
-    let jobAdvertisementService = new JobAdvertisementService();
-    jobAdvertisementService
-      .getAll()
-      .then((result) => setJobAdvertisements(result.data.data))
-      
-  },[]);
-  return (
-    <div>
-        
-      <Card.Group>
-      {jobadvertisements.map((jobadvertisement) => (
-          <Card>
-            <Card.Content>
-             
-              <Card.Header><mark>{jobadvertisement.employer.companyName}</mark></Card.Header>
-              <Card.Meta key={jobadvertisement.id}></Card.Meta>
-              <Card.Description>
-              
-              <label>İş Tanımı : </label>
-                <strong>{jobadvertisement.description}{" "}</strong>
-                <br></br><br></br>
-                <label>Pozisyon Adı : </label>
-                <strong>{jobadvertisement.jobPosition.name}{" "}</strong><br></br>
-
-                <label>Çalışma Şekli : </label>
-               <strong>{jobadvertisement.wayofworking.name}{" "}</strong><br></br>
-               <label>Pozisyon Seviyesi : </label>
-              <strong>{jobadvertisement.positionLevel.name}{" "}</strong><br></br>
-              <label>Konum : </label>
-                <strong>{jobadvertisement.city.cityName}{" "}</strong><br></br>
-                <label>Maaş Aralığı : </label>
-                <strong>{jobadvertisement.minSalary}{" "}</strong>
-                <strong>{jobadvertisement.maxSalary}{" "}</strong><br></br>
+    useEffect(() => {
+        let jobAdvertisementService = new JobAdvertisementService();
+        jobAdvertisementService
+          .getAll()
+          .then((result) => setJobAdvertisements(result.data.data))
+          
+      },[]);
+    return (
+        <div>
+          <Container>
+              <Row className="justify-content-center">
+              {jobadvertisements.map((jobadvertisement) => (
                 
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <div className="ui two buttons">
-                <Button basic color="green">
-                  İncele
-                </Button>
-                <Button basic color="red">
-                  Kaydet
-                </Button>
-              </div>
-            </Card.Content>
-          </Card>
-      ))}
-      </Card.Group>
-      
-    </div>
-  );
+                  <Row className="row-grid">
+                    
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                            <i className="ni ni-check-bold" />
+                          </div>
+                          <h6 className="text-primary text-uppercase">
+                          {jobadvertisement.employer.companyName}
+                          </h6>
+                          <p >
+                            Argon is a great free UI package based on Bootstrap
+                            4 that includes the most important components and
+                            features.
+                          </p>
+                          <div>
+                            <Badge color="primary" pill className="mr-1">
+                            {jobadvertisement.wayofworking.name}
+                            </Badge>
+                            <Badge color="primary" pill className="mr-1">
+                            {jobadvertisement.positionLevel.name}
+                            </Badge>
+                            <Badge color="primary" pill className="mr-1">
+                            {jobadvertisement.city.cityName}
+                            </Badge>
+                          </div>
+                          <Button
+                            className="mt-4"
+                            color="primary"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            İncele
+                          </Button>
+                          <Button
+                            className="mt-4"
+                            color="danger"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            Yıldızla
+                          </Button>
+                        </CardBody>
+                      </Card>
+                   
+                    
+                    
+              
+                  <br></br>
+                </Row>
+                 ))}
+              </Row>
+              
+            </Container>
+        
+        </div>
+    )
 }

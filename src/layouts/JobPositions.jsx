@@ -14,15 +14,14 @@ export default function JobPositions() {
       },[]);
   return (
     <div>
-        <h3><mark> İş Pozisyonları</mark></h3>
-      <Menu inverted vertical>
+      
+
           {jobPositions.map((jobposition) =>(
               
                 <Menu.Item key={jobposition.id} name='enterprise' name={jobposition.name} />
                
           ))}
         
-      </Menu>
     </div>
   );
 }

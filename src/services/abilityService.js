@@ -3,6 +3,7 @@ export default class AbilityService{
     getAll(){
         return axios.get("http://localhost:8080/api/abilityjobseekers/getall")
     }
+    
 
     add(ability) {
         return axios.post("http://localhost:8080/api/abilityjobseekers", ability);

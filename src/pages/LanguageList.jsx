@@ -11,7 +11,7 @@ export default function LanguageList() {
       }, []);
     return (
         <div>
-              <Table striped>
+              <Table striped >
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Dil Adı</Table.HeaderCell>

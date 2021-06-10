@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Icon, Label, Menu, Table } from "semantic-ui-react";
+import { Container, Icon, Label, Menu, Table } from "semantic-ui-react";
 import JobSeekerService from "../services/jobSeekerService";
+import { NavbarBrand, Navbar } from "reactstrap";
 
 export default function JobSeekerList() {
   const [jobseekers, setJobSeekers] = useState([]);
@@ -11,6 +12,12 @@ export default function JobSeekerList() {
   }, []);
   return (
     <div>
+      <Container>
+      <Navbar className="navbar-dark bg-primary rounded" expand="lg">
+          <Container>
+            <NavbarBrand>İş Arayanlar</NavbarBrand>
+          </Container>
+        </Navbar>
       <Table striped>
         <Table.Header>
           <Table.Row>
@@ -32,6 +39,7 @@ export default function JobSeekerList() {
           ))}
         </Table.Body>
       </Table>
+      </Container>
     </div>
   );
 }

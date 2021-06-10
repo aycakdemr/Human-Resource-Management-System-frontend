@@ -1,24 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 import { Menu, Grid } from "semantic-ui-react";
 import AblilityList from "../pages/AblilityList";
 export default function CvLayout() {
   return (
     <div>
       
-            
-            <Menu pointing vertical>
-                <h3>
-              CV İslemleri
-            </h3>
-              <Menu.Item href="/AbilityList/getAll" name="Yetenekler" />
-              <Menu.Item href="/LanguageList/getAll" name="Diller" />
-              <Menu.Item href="/SchoolList/getAll" name="Okullar" />
-              <Menu.Item href="/SocialMedia/getAll" name ="Sosyal Medya" />
-              <Menu.Item href="/WorkPlace/getAll" name="Deneyimler" />
-            </Menu>
-         
-                 
+      <Menu pointing vertical>
+        <h3>CV İslemleri</h3>
+        <Menu.Item as={NavLink} to="/cvdetail/abilitylist" name="Yetenekler"></Menu.Item>
+        <Menu.Item as={NavLink} to="/cvdetail/language" name="Diller"></Menu.Item>
+        <Menu.Item as={NavLink} to="/cvdetail/school" name="Okullar"></Menu.Item>
+        <Menu.Item
+          as={NavLink}
+          to="/cvdetail/socialmedia"
+          name="Sosyal Medya"
+        ></Menu.Item>
+        <Menu.Item as={NavLink} to="/cvdetail/workplace" name="Deneyimler"></Menu.Item>
+      </Menu>
     </div>
   );
 }

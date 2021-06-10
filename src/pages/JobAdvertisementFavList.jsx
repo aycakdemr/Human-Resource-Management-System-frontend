@@ -61,10 +61,7 @@ export default function JobAdvertisementFavList() {
               <CardBody>
               <h1>{jobadvertisement.employer.companyName}</h1>
                   <TabPane tabId="iconTabs1">
-                    <h3>
-                      
-                      {jobadvertisement.description}{" "}
-                    </h3>
+                    
                     <label>Pozisyon Adı : </label>
                 <strong>{jobadvertisement.jobPosition.name}{" "}</strong><br></br>
                 <label>Çalışma Şekli : </label>

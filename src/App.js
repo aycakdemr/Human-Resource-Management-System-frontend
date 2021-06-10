@@ -9,7 +9,7 @@ import JobSeekerList from "./pages/JobSeekerList";
 import EmployerList from "./pages/EmployerList";
 import CvLayout from "./layouts/CvLayout";
 import AblilityList from "./pages/AblilityList";
-import LanguageList from "./pages/LanguageList";
+import AdvertDetail from "./pages/AdvertDetail";
 import SchoolList from "./pages/SchoolList";
 import SocialMediaList from "./pages/SocialMediaList";
 import WorkPlaceList from "./pages/WorkPlaceList";
@@ -18,16 +18,19 @@ import MainPage from "./pages/MainPage";
 import Footer from "./layouts/Footer";
 import { Menu } from 'semantic-ui-react'
 import JobAdvertisementFavList from "./pages/JobAdvertisementFavList";
+import CvDashboard from "./layouts/CvDashboard";
 function App() {
   return (
     <div className="App">
         <Navi />
-        
         <MainPage/>
-        <JobAdvertisementFavList/>
-        <Footer/>
-        <Dashboard/>
-
+        <Route exact path="/" component={JobAdvertisementFavList}/>
+        <Route exact path="/" component={Footer}/>
+        <Route path="/employers" component={EmployerList}/>
+        <Route path="/jobseekers" component={JobSeekerList}/>
+        <Route exact path="/adverts" component={Dashboard}/>
+        <Route  path="/adverts/:id" component={AdvertDetail}/>
+        <Route path="/cvdetail" component={CvDashboard}/>
     </div>
   );
 }

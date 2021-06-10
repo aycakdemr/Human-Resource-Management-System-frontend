@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { NavbarBrand, Navbar } from "reactstrap";
+import { NavLink } from "react-router-dom";
+import { Button} from "semantic-ui-react";
 
 import JobAdvertisementService from '../services/jobAdvertisementService';
 import {
     Badge,
-    Button,
     Card,
     CardBody,
-    CardImg,
-    FormGroup,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
     Container,
-    Row,
-    Col
+    Row
   } from "reactstrap";
+import { Link } from "react-router-dom";
 export default function JobAdvertisementList() {
     const [jobadvertisements, setJobAdvertisements] = useState([]);
 
@@ -29,6 +25,14 @@ export default function JobAdvertisementList() {
     return (
         <div>
           <Container>
+          <Navbar className="navbar-dark bg-danger rounded" expand="lg">
+          <Container>
+            <NavbarBrand>Tüm İlanlar</NavbarBrand>
+          </Container>
+          <br></br>
+          <br></br>
+        </Navbar>
+        <br></br>
               <Row className="justify-content-center">
               {jobadvertisements.map((jobadvertisement) => (
                 
@@ -61,16 +65,16 @@ export default function JobAdvertisementList() {
                           <Button
                             className="mt-4"
                             color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                            as={NavLink}
+                            to={`/adverts/${jobadvertisement.id}`}
                           >
+                            
                             İncele
                           </Button>
                           <Button
                             className="mt-4"
                             color="danger"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
+                           
                           >
                             Yıldızla
                           </Button>

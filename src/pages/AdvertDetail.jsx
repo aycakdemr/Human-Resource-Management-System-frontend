@@ -4,7 +4,7 @@ import { Button, Card, Container, Row, Col } from "reactstrap";
 import JobAdvertisementService from '../services/jobAdvertisementService';
 export default function AdvertDetail() {
     let { id } = useParams();
-    const [advert, setAdvert] = useState({});
+    const [adverts, setAdvert] = useState([]);
 
     useEffect(()=>{
         let advertService = new JobAdvertisementService()
@@ -20,6 +20,7 @@ export default function AdvertDetail() {
           </section>
           <section className="section">
             <Container>
+            {adverts.map((adverts) => (
               <Card className="card-profile shadow mt--300">
                 <div className="px-4">
                   <Row className="justify-content-center">
@@ -57,36 +58,36 @@ export default function AdvertDetail() {
                   </Row>
                   <div className="text-center mt-5">
                     <h1>
-                      {advert.employer.companyName}{" "}
+                      {adverts.employer.companyName}{" "}
                     </h1>
                     <div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
-                      {advert.city.cityName}
+                      {adverts.city.cityName}
                     </div>
                     <div className="h6 mt-4">
                       <i className="ni business_briefcase-24 mr-2" />
-                      {advert.positionLevel.name}
+                      {adverts.positionLevel.name}
                     </div>
                     <div>
                       <i className="ni education_hat mr-2" />
-                      {advert.wayofworking.name}
+                      {adverts.wayofworking.name}
                     </div>
                     <div>
                       <i className="ni education_hat mr-2" />
-                      {advert.employer.companysector.name}
+                      {adverts.employer.companysector.name}
                     </div>
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
                         
-                        {advert.description}
+                        {adverts.description}
                         
                         <label></label>
-                        <h4>Maaş Aralığı: {advert.minSalary} - {advert.maxSalary} </h4>
-                        <h4>Alınacak Kişi Sayısı: {advert.quota}  </h4>
-                        <h4>Web Sitesi: {advert.employer.webAddress}  </h4>
-                        <h4>Telefon Numarası: {advert.employer.phoneNumber} </h4>
+                        <h4>Maaş Aralığı: {adverts.minSalary} - {adverts.maxSalary} </h4>
+                        <h4>Alınacak Kişi Sayısı: {adverts.quota}  </h4>
+                        <h4>Web Sitesi: {adverts.employer.webAddress}  </h4>
+                        <h4>Telefon Numarası: {adverts.employer.phoneNumber} </h4>
                         
                         <Button
                     color="danger"
@@ -103,6 +104,7 @@ export default function AdvertDetail() {
                   </div>
                 </div>
               </Card>
+               ))}
             </Container>
           </section>
         </main>

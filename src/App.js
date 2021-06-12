@@ -15,6 +15,7 @@ import SocialMediaList from "./pages/SocialMediaList";
 import WorkPlaceList from "./pages/WorkPlaceList";
 import { Button, Container, Row, Col } from "reactstrap";
 import MainPage from "./pages/MainPage";
+import NewAdvert from "./pages/NewAdvert";
 import Footer from "./layouts/Footer";
 import { Menu } from 'semantic-ui-react'
 import JobAdvertisementFavList from "./pages/JobAdvertisementFavList";
@@ -30,7 +31,8 @@ function App() {
         <Route path="/jobseekers" component={JobSeekerList}/>
         <Route exact path="/adverts" component={Dashboard}/>
         <Route  path="/adverts/:id" component={AdvertDetail}/>
-        <Route path="/cvdetail" component={CvDashboard}/>
+        <Route exact path="/cvdetail" component={CvDashboard}/>
+        <Route exact path="/newadvert" component={NewAdvert}/>
     </div>
   );
 }

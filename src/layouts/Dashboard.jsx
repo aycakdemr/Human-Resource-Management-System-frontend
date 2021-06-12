@@ -8,6 +8,7 @@ import PositionLevels from "./PositionLevels";
 import WayOfWorkings from "./WayOfWorkings";
 import { Menu } from "semantic-ui-react";
 import JobAdvertisementList from "../pages/JobAdvertisementList";
+import { NavLink } from "react-router-dom";
 
 export default function Dashboard() {
   return (
@@ -59,12 +60,20 @@ export default function Dashboard() {
               <br></br>
               <Button primary>Filtrele</Button>
             </Menu>
+            <Button
+              className="mt-4"
+              color="primary"
+              as={NavLink}
+              to="/newadvert"
+            >
+              Yeni İlan Ekle
+            </Button>
           </Grid.Column>
 
           <Grid.Column width={13}>
             <br></br>
             <br></br>
-          <JobAdvertisementList />
+            <JobAdvertisementList />
           </Grid.Column>
         </Grid.Row>
       </Grid>

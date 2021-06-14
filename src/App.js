@@ -31,7 +31,7 @@ function App() {
         <Route path="/jobseekers" component={JobSeekerList}/>
         <Route exact path="/adverts" component={Dashboard}/>
         <Route  path="/adverts/:id" component={AdvertDetail}/>
-        <Route exact path="/cvdetail" component={CvDashboard}/>
+        <Route path="/cvdetail" component={CvDashboard}/>
         <Route exact path="/newadvert" component={NewAdvert}/>
     </div>
   );

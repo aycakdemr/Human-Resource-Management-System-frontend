@@ -12,7 +12,7 @@ export default class JobAdvertisementService{
         return axios.get("http://localhost:8080/api/jobadvertisements/getbyId?id="+id)
     }
     add(adv) {
-        return axios.post("http://localhost:8080/api/jobadvertisements", adv);
+        return axios.post("http://localhost:8080/api/jobadvertisements/add", adv);
     }
 
     update(adv) {

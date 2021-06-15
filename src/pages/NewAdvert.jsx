@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
@@ -10,6 +9,7 @@ import WayOfWorkingService from "../services/wayOfWorkingService";
 import PositionLevelService from "../services/positionLevelService";
 import EducationLevelService from "../services/educationLevelService";
 import JobAdvertisementService from "../services/jobAdvertisementService";
+
 export default function NewAdvert() {
   let JobAdvertService = new JobAdvertisementService();
   const [howtoworks, setHowToWorks] = useState([]);
@@ -42,31 +42,13 @@ export default function NewAdvert() {
       .then((result) => setEducationLevels(result.data.data));
   }, []);
   const NewAdvertSchema = Yup.object().shape({
-    employerId: Yup.string()
-      .min(2, "Minimum iki karakter olmalıdır")
-      .required("Bu alanın doldurulması zorunludur"),
-    jobTitleId: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    description: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    cityId: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    quota: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    applicationDeadline: Yup.string().required(
-      "Bu alanın doldurulması zorunludur"
-    ),
-    minSalary: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    maxSalary: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    wayOfWorkinId: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    positionLevelId: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    educationLevelId: Yup.string().required(
-      "Bu alanın doldurulması zorunludur"
-    ),
-    howToWorkId: Yup.string().required("Bu alanın doldurulması zorunludur"),
+   
   });
   const formik = useFormik({
     initialValues: {
       jobTitleId: "",
       description: "",
       cityId: "",
-      quota: "",
       applicationDeadline: "",
       minSalary: "",
       maxSalary: "",
@@ -77,9 +59,8 @@ export default function NewAdvert() {
     },
     validationSchema: NewAdvertSchema,
     onSubmit: (value) => {
-      value.employerId = 2;
       value.isActive = true;
-      value.createdDate = "12/10/2020";
+      value.createdDate = new Date("12/10/2020");
       value.quota = 2;
       JobAdvertService.add(value).then((result) =>
         console.log(result.data.data)
@@ -122,17 +103,19 @@ export default function NewAdvert() {
   return (
     <div>
       <Container>
+        
         <Form onSubmit={formik.handleSubmit}>
           <Form.Group widths="equal">
             <div style={{ width: "50rem", marginRight: "0.5rem" }}>
               <Form.Input
+              type ="date"
                 label="Son Başvuru Tarihi"
                 placeholder="Son Başvuru Tarihi"
                 id="applicationDeadline"
                 name="applicationDeadline"
                 value={formik.values.applicationDeadline}
+
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
                 error={
                   formik.touched.applicationDeadline &&
                   Boolean(formik.errors.applicationDeadline)
@@ -144,7 +127,11 @@ export default function NewAdvert() {
 
             <div style={{ width: "50rem", marginRight: "0.5rem" }}>
               <Form.Select
-                fluid
+                
+                selection
+                item
+                clearable
+                search
                 id="jobTitleId"
                 name="jobTitleId"
                 label="İş Başlığı"
@@ -159,7 +146,11 @@ export default function NewAdvert() {
             </div>
             <div style={{ width: "50rem" }}>
               <Form.Select
-                fluid
+                
+                selection
+                item
+                clearable
+                search
                 id="howToWorkId"
                 name="howToWorkId"
                 label="Çalışma Şekli"
@@ -177,7 +168,11 @@ export default function NewAdvert() {
           <Form.Group widths="equal">
             <div style={{ width: "50rem", marginRight: "0.5rem" }}>
               <Form.Select
-                fluid
+                
+                selection
+                item
+                clearable
+                search
                 id="cityId"
                 name="cityId"
                 label="Şehir Adı"
@@ -193,7 +188,11 @@ export default function NewAdvert() {
 
             <div style={{ width: "50rem", marginRight: "0.5rem" }}>
               <Form.Select
-                fluid
+                
+                selection
+                item
+                clearable
+                search
                 id="educationLevelId"
                 name="educationLevelId"
                 label="Eğitim Seviyesi"
@@ -208,7 +207,11 @@ export default function NewAdvert() {
             </div>
             <div style={{ width: "50rem" }}>
               <Form.Select
-                fluid
+                
+                selection
+                item
+                clearable
+                search
                 id="positionLevelId"
                 name="positionLevelId"
                 label="Pozisyon Seviyesi"
@@ -225,7 +228,11 @@ export default function NewAdvert() {
           <Form.Group widths="equal">
             <div style={{ width: "50rem", marginRight: "0.5rem" }}>
               <Form.Select
-                fluid
+                
+                selection
+                item
+                clearable
+                search
                 id="wayOfWorkinId"
                 name="wayOfWorkinId"
                 label="Çalışma Zamanı"
@@ -242,13 +249,13 @@ export default function NewAdvert() {
 
             <div style={{ width: "50rem", marginRight: "0.5rem" }}>
               <Form.Input
+                type="number"
                 label="Minimum Maaş"
                 placeholder="Minimum Maaş"
                 id="minSalary"
                 name="minSalary"
                 value={formik.values.minSalary}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
                 error={
                   formik.touched.minSalary && Boolean(formik.errors.minSalary)
                 }
@@ -257,13 +264,13 @@ export default function NewAdvert() {
             </div>
             <div style={{ width: "50rem", marginRight: "0.5rem" }}>
               <Form.Input
+                type="number"
                 label="Maksimum Maaş"
                 placeholder="Maksimum Maaş"
                 id="maxSalary"
                 name="maxSalary"
                 value={formik.values.maxSalary}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
                 error={
                   formik.touched.maxSalary && Boolean(formik.errors.maxSalary)
                 }
@@ -273,6 +280,7 @@ export default function NewAdvert() {
           </Form.Group>
 
           <Form.TextArea
+          type="text"
             label="İş Açıklaması"
             placeholder="İş Açıklaması"
             id="description"

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Menu } from "semantic-ui-react";
 import EducationLevelService from "../services/educationLevelService";
 
+import NewAdvert from "../pages/NewAdvert";
 
 export default function EducationLevel() {
 
@@ -22,7 +23,7 @@ export default function EducationLevel() {
                 <Menu.Item key={educationLevel.id} name='enterprise' name={educationLevel.name} />
                
           ))}
-        
+         
   
         </div>
     )

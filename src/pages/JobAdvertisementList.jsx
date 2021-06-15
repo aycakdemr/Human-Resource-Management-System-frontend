@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { NavbarBrand, Navbar } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { Button} from "semantic-ui-react";
-
 import JobAdvertisementService from '../services/jobAdvertisementService';
 import {
     Badge,
@@ -88,9 +87,9 @@ export default function JobAdvertisementList() {
                 </Row>
                  ))}
               </Row>
-              
+             
             </Container>
-        
+           
         </div>
     )
 }

@@ -57,9 +57,13 @@ export default function AdvertDetail() {
                     </Col>
                   </Row>
                   <div className="text-center mt-5">
-                    <h1>
+                    
+                    <h3 className="text-danger text-uppercase">
+                      {adverts.advertTitle}{" "}
+                    </h3>
+                    <h3 className="text-primary text-uppercase">
                       {adverts.employer.companyName}{" "}
-                    </h1>
+                    </h3>
                     <div className="h6 font-weight-300">
                       <i className="ni location_pin mr-2" />
                       {adverts.city.cityName}

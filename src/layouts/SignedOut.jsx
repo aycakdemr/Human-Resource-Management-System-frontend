@@ -2,6 +2,7 @@ import React from "react";
 import {
     Button,
   } from "reactstrap";
+
 export default function SignedOut(props) {
   return (
    <div>
@@ -26,6 +27,8 @@ export default function SignedOut(props) {
         </span>
         <span className="nav-link-inner--text ml-1">Kayıt Ol</span>
       </Button>
+        
+
       </div>
   );
 }

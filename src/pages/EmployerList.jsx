@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Container, Table } from "semantic-ui-react";
 import EmployerService from "../services/employerService";
 import { NavbarBrand, Navbar } from "reactstrap";
+import { useSelector } from 'react-redux';
+
 export default function EmployerList() {
   const [employers, setEmployers] = useState([]);
-
+  console.log(employers)
   useEffect(() => {
     let employersService = new EmployerService();
     employersService.getAll().then((result) => setEmployers(result.data.data));

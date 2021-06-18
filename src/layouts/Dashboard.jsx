@@ -9,10 +9,12 @@ import WayOfWorkings from "./WayOfWorkings";
 import { Menu } from "semantic-ui-react";
 import JobAdvertisementList from "../pages/JobAdvertisementList";
 import { NavLink } from "react-router-dom";
+import { ToastContainer } from 'react-toastify'
 
 export default function Dashboard() {
   return (
     <Container>
+      <ToastContainer position="bottom-right"/>
       <Grid>
         <Grid.Row>
           <Grid.Column width={3}>

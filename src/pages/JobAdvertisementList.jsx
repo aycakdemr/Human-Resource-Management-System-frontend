@@ -3,6 +3,9 @@ import { NavbarBrand, Navbar } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { Button} from "semantic-ui-react";
 import JobAdvertisementService from '../services/jobAdvertisementService';
+import {addToList} from "../store/actions/favAdvertActions"
+import {toast} from "react-toastify"
+
 import {
     Badge,
     Card,
@@ -11,9 +14,16 @@ import {
     Row
   } from "reactstrap";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 export default function JobAdvertisementList() {
+  const dispatch = useDispatch()
     const [jobadvertisements, setJobAdvertisements] = useState([]);
 
+    const handleAddToList=(advert)=>{
+      dispatch(addToList(advert))
+      toast.warning(`İLAN EKLENDİ`)
+      
+    }
     useEffect(() => {
         let jobAdvertisementService = new JobAdvertisementService();
         jobAdvertisementService
@@ -42,8 +52,11 @@ export default function JobAdvertisementList() {
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-check-bold" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
+                          <h4 className="text-primary text-uppercase">
                           {jobadvertisement.employer.companyName}
+                          </h4>
+                          <h6 className="text-danger text-uppercase">
+                          {jobadvertisement.advertTitle}
                           </h6>
                           <p >
                             Argon is a great free UI package based on Bootstrap
@@ -73,7 +86,7 @@ export default function JobAdvertisementList() {
                           <Button
                             className="mt-4"
                             color="danger"
-                           
+                            onClick={() =>handleAddToList(jobadvertisement)}
                           >
                             Yıldızla
                           </Button>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import {
   DropdownToggle,
@@ -8,7 +8,10 @@ import {
     UncontrolledDropdown,
 } from "reactstrap";
 import { Button, DropdownItem } from "semantic-ui-react";
+import FavAdverts from "./FavAdverts";
 export default function SignedIn(props) {
+  const favlist = useSelector(state =>state.favlist)
+
   return (
     <div>
       
@@ -33,6 +36,8 @@ export default function SignedIn(props) {
           </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
+      <br></br>
+       {favlist.favAdvertListItems.length > 0 &&<FavAdverts/>}
     </div>
   );
 }

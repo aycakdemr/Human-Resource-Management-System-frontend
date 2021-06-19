@@ -64,11 +64,19 @@ export default function Dashboard() {
             </Menu>
             <Button
               className="mt-4"
-              color="primary"
+              color="orange"
               as={NavLink}
               to="/newadvert"
             >
               Yeni İlan Ekle
+            </Button>
+            <Button
+              className="mt-4"
+              color="purple"
+              as={NavLink}
+              to="/confirmAdvert"
+            >
+              İlan Onayla
             </Button>
           </Grid.Column>
 

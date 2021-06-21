@@ -20,7 +20,7 @@ export default function ConfirmAdvert() {
     useEffect(() => {
         let jobAdvertisementService = new JobAdvertisementService();
         jobAdvertisementService
-          .getAll()
+          .getAllActivetedFalse()
           .then((result) => setJobAdvertisements(result.data.data))
           
       },[]);

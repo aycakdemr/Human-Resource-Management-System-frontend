@@ -8,6 +8,7 @@ import EmployerList from "./pages/users/EmployerList";
 import AdvertDetail from "./pages/adverts/AdvertDetail";
 import MainPage from "./pages/MainPage";
 import NewAdvert from "./pages/adverts/NewAdvert";
+
 import Footer from "./layouts/Footer";
 import JobAdvertisementFavList from "./pages/adverts/JobAdvertisementFavList";
 import CvDashboard from "./layouts/cv/CvDashboard";
@@ -31,7 +32,6 @@ function App() {
         <Route exact path="/newadvert" component={NewAdvert}/>
         <Route exact path="/confirmAdvert" component={ConfirmAdvert}/>
         <Route exact path="/confirmAdvertDetail/:id" component={ConfirmAdvertDetail}/>
-        
     </div>
   );
 }

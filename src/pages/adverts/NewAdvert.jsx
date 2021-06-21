@@ -46,24 +46,24 @@ export default function NewAdvert() {
   });
   const formik = useFormik({
     initialValues: {
-      jobTitleId: "",
+      jobTitle: "",
       description: "",
-      cityId: "",
+      city: "",
       applicationDeadline: "",
       minSalary: "",
       maxSalary: "",
-      wayOfWorkinId: "",
-      positionLevelId: "",
-      educationLevelId: "",
-      howToWorkId: "",
+      wayOfWorking: "",
+      positionLevel: "",
+      educationLevel: "",
+      howToWork: "",
     },
     validationSchema: NewAdvertSchema,
     onSubmit: (value) => {
       value.isActive = true;
-      value.createdDate = new Date("12/10/2020");
+      value.createdDate = "12/10/2020";
       value.quota = 2;
       JobAdvertService.add(value).then((result) =>
-        console.log(result.data.data)
+        console.log(value)
       );
     },
   });
@@ -132,14 +132,14 @@ export default function NewAdvert() {
                 item
                 clearable
                 search
-                id="jobTitleId"
-                name="jobTitleId"
+                id="jobTitle"
+                name="jobTitle"
                 label="İş Başlığı"
                 onChange={(event, data) =>
-                  handleChangeValues(data.value, "jobTitleId")
+                  handleChangeValues(data.value, "jobTitle")
                 }
                 onBlur={formik.onBlur}
-                value={formik.values.jobTitleId}
+                value={formik.values.jobTitle}
                 options={jobPositionOption}
                 placeholder="İş Başlığı"
               />
@@ -151,14 +151,14 @@ export default function NewAdvert() {
                 item
                 clearable
                 search
-                id="howToWorkId"
-                name="howToWorkId"
+                id="howToWork"
+                name="howToWork"
                 label="Çalışma Şekli"
                 onChange={(event, data) =>
-                  handleChangeValues(data.value, "howToWorkId")
+                  handleChangeValues(data.value, "howToWork")
                 }
                 onBlur={formik.onBlur}
-                value={formik.values.howToWorkId}
+                value={formik.values.howToWork}
                 options={howToWorkOption}
                 placeholder="Çalışma Şekli"
               />
@@ -173,14 +173,14 @@ export default function NewAdvert() {
                 item
                 clearable
                 search
-                id="cityId"
-                name="cityId"
+                id="city"
+                name="city"
                 label="Şehir Adı"
                 onChange={(event, data) =>
-                  handleChangeValues(data.value, "cityId")
+                  handleChangeValues(data.value, "city")
                 }
                 onBlur={formik.onBlur}
-                value={formik.values.cityId}
+                value={formik.values.city}
                 options={cityOption}
                 placeholder="Şehir Adı"
               />
@@ -193,14 +193,14 @@ export default function NewAdvert() {
                 item
                 clearable
                 search
-                id="educationLevelId"
-                name="educationLevelId"
+                id="educationLevel"
+                name="educationLevel"
                 label="Eğitim Seviyesi"
                 onChange={(event, data) =>
-                  handleChangeValues(data.value, "educationLevelId")
+                  handleChangeValues(data.value, "educationLevel")
                 }
                 onBlur={formik.onBlur}
-                value={formik.values.educationLevelId}
+                value={formik.values.educationLevel}
                 options={educationLevelOption}
                 placeholder="Eğitim Seviyesi"
               />
@@ -212,14 +212,14 @@ export default function NewAdvert() {
                 item
                 clearable
                 search
-                id="positionLevelId"
-                name="positionLevelId"
+                id="positionLevel"
+                name="positionLevel"
                 label="Pozisyon Seviyesi"
                 onChange={(event, data) =>
-                  handleChangeValues(data.value, "positionLevelId")
+                  handleChangeValues(data.value, "positionLevel")
                 }
                 onBlur={formik.onBlur}
-                value={formik.values.positionLevelId}
+                value={formik.values.positionLevel}
                 options={positionLevelOption}
                 placeholder="Pozisyon Seviyesi"
               />
@@ -233,15 +233,15 @@ export default function NewAdvert() {
                 item
                 clearable
                 search
-                id="wayOfWorkinId"
-                name="wayOfWorkinId"
+                id="wayOfWorking"
+                name="wayOfWorking"
                 label="Çalışma Zamanı"
-                value={formik.values.wayOfWorkinId}
+                value={formik.values.wayOfWorking}
                 onChange={(event, data) =>
-                  handleChangeValues(data.value, "wayOfWorkinId")
+                  handleChangeValues(data.value, "wayOfWorking")
                 }
                 onBlur={formik.onBlur}
-                value={formik.values.wayOfWorkinId}
+                value={formik.values.wayOfWorking}
                 options={wayOfWorkingOption}
                 placeholder="Çalışma Zamanı"
               />

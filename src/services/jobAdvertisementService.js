@@ -5,8 +5,11 @@ export default class JobAdvertisementService{
     getTwoAdvert(){
         return axios.get("http://localhost:8080/api/jobadvertisements/getTwoAdvert")
     }
-    getAll(){
-        return axios.get("http://localhost:8080/api/jobadvertisements/getall")
+    getAllActivetedTrue(){
+        return axios.get("http://localhost:8080/api/jobadvertisements/getByIsActivatedTrue")
+    }
+    getAllActivetedFalse(){
+        return axios.get("http://localhost:8080/api/jobadvertisements/getByIsActivatedFalse")
     }
     getById(id){
         return axios.get("http://localhost:8080/api/jobadvertisements/getbyId?id="+id)

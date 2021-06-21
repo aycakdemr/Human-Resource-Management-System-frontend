@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "semantic-ui-react";
 
-import AbilityService from '../services/abilityService';
+import AbilityService from '../../services/abilityService';
 
-export default function AblilityList() {
+export default function AbilityList() {
     const [abilities, setAbilities] = useState([]);
 
     useEffect(() => {

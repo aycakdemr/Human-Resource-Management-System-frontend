@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu } from "semantic-ui-react";
-import PositionLevelService from "../services/positionLevelService";
+import PositionLevelService from "../../services/positionLevelService";
 export default function PositionLevels() {
 
     const [positionLevels, setPositionLevels] = useState([]);

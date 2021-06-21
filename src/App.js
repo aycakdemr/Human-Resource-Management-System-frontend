@@ -3,16 +3,16 @@ import "semantic-ui-css/semantic.min.css";
 import { Route } from "react-router-dom";
 import Navi from "./layouts/Navi";
 import Dashboard from "./layouts/Dashboard";
-import JobSeekerList from "./pages/JobSeekerList";
-import EmployerList from "./pages/EmployerList";
-import AdvertDetail from "./pages/AdvertDetail";
+import JobSeekerList from "./pages/users/JobSeekerList";
+import EmployerList from "./pages/users/EmployerList";
+import AdvertDetail from "./pages/adverts/AdvertDetail";
 import MainPage from "./pages/MainPage";
-import NewAdvert from "./pages/NewAdvert";
+import NewAdvert from "./pages/adverts/NewAdvert";
 import Footer from "./layouts/Footer";
-import JobAdvertisementFavList from "./pages/JobAdvertisementFavList";
-import CvDashboard from "./layouts/CvDashboard";
-import ConfirmAdvert from "./pages/ConfirmAdvert";
-import ConfirmAdvertDetail from "./pages/ConfirmAdvertDetail";
+import JobAdvertisementFavList from "./pages/adverts/JobAdvertisementFavList";
+import CvDashboard from "./layouts/cv/CvDashboard";
+import ConfirmAdvert from "./pages/adverts/ConfirmAdvert";
+import ConfirmAdvertDetail from "./pages/adverts/ConfirmAdvertDetail";
 import { ToastContainer } from 'react-toastify'
 
 function App() {

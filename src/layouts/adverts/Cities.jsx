@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Dropdown, Menu } from 'semantic-ui-react'
-import CityService from "../services/cityService";
+import CityService from "../../services/cityService";
 
 
 export default function Cities() {

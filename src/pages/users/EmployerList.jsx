@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Table } from "semantic-ui-react";
-import EmployerService from "../services/employerService";
+import EmployerService from "../../services/employerService";
 import { NavbarBrand, Navbar } from "reactstrap";
 import { useSelector } from 'react-redux';
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "semantic-ui-react";
-import SchoolService from '../services/schoolService';
+import SchoolService from '../../services/schoolService';
 
 export default function SchoolList() {
 

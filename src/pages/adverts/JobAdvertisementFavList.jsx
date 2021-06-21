@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Image } from "semantic-ui-react";
 import classnames from "classnames";
-import JobAdvertisementService from "../services/jobAdvertisementService"
+import JobAdvertisementService from "../../services/jobAdvertisementService"
 import {
   Card,
   CardBody,

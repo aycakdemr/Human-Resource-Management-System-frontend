@@ -2,13 +2,13 @@ import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import { Form, Container, Button } from "semantic-ui-react";
-import JobPositionService from "../services/jobPositionService";
-import HowToWorkService from "../services/howToWorkService";
-import CityService from "../services/cityService";
-import WayOfWorkingService from "../services/wayOfWorkingService";
-import PositionLevelService from "../services/positionLevelService";
-import EducationLevelService from "../services/educationLevelService";
-import JobAdvertisementService from "../services/jobAdvertisementService";
+import JobPositionService from "../../services/jobPositionService";
+import HowToWorkService from "../../services/howToWorkService";
+import CityService from "../../services/cityService";
+import WayOfWorkingService from "../../services/wayOfWorkingService";
+import PositionLevelService from "../../services/positionLevelService";
+import EducationLevelService from "../../services/educationLevelService";
+import JobAdvertisementService from "../../services/jobAdvertisementService";
 
 export default function NewAdvert() {
   let JobAdvertService = new JobAdvertisementService();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router';
 import { Button, Card, Container, Row, Col } from "reactstrap";
-import JobAdvertisementService from '../services/jobAdvertisementService';
+import JobAdvertisementService from '../../services/jobAdvertisementService';
 export default function AdvertDetail() {
     let { id } = useParams();
     const [adverts, setAdvert] = useState([]);

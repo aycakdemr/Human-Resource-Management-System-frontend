@@ -8,7 +8,7 @@ import {
     UncontrolledDropdown,
 } from "reactstrap";
 import { Button, DropdownItem } from "semantic-ui-react";
-import FavAdverts from "./FavAdverts";
+import FavAdverts from "./adverts/FavAdverts";
 export default function SignedIn(props) {
   const favlist = useSelector(state =>state.favlist)
 

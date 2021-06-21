@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import { Menu, Grid } from "semantic-ui-react";
-import AblilityList from "../pages/AblilityList";
 export default function CvLayout() {
   return (
     <div>

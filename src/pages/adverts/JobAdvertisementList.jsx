@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavbarBrand, Navbar } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { Button} from "semantic-ui-react";
-import ApprovedAdvertsService from '../services/approvedAdvertsService';
-import {addToList} from "../store/actions/favAdvertActions"
+import ApprovedAdvertsService from '../../services/approvedAdvertsService';
+import {addToList} from "../../store/actions/favAdvertActions"
 import {toast} from "react-toastify"
 
 import {

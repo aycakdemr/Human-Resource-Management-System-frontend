@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router';
 import { Button, Card, Container, Row, Col,Form } from "reactstrap";
-import ApprovedAdvertsService from "../services/approvedAdvertsService";
-import JobAdvertisementService from '../services/jobAdvertisementService';
+import ApprovedAdvertsService from "../../services/approvedAdvertsService";
+import JobAdvertisementService from '../../services/jobAdvertisementService';
 import { useFormik } from "formik";
 import {toast} from "react-toastify"
 

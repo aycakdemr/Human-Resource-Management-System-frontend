@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "semantic-ui-react";
-import SocialMediaService from "../services/socialMediaService";
+import SocialMediaService from "../../services/socialMediaService";
 export default function SocialMediaList() {
 
     const [socialmedias, setSocialMedias] = useState([]);

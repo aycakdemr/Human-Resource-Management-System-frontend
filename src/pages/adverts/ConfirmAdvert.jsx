@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavbarBrand, Navbar } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { Table,Button} from "semantic-ui-react";
-import JobAdvertisementService from '../services/jobAdvertisementService';
-import ApprovedAdvertService from '../services/approvedAdvertsService';
-import { useFormik } from "formik";
+import JobAdvertisementService from '../../services/jobAdvertisementService';
 
 
 

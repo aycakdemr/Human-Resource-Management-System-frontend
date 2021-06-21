@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import WayOfWorkingService from "../services/wayOfWorkingService";
+import WayOfWorkingService from "../../services/wayOfWorkingService";
 import { Menu } from "semantic-ui-react";
 export default function WayOfWorkings() {
   const [wayofworkings, setWayOfWorking] = useState([]);

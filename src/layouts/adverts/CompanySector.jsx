@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu } from "semantic-ui-react";
-import CompanySectorService from '../services/companySectorService';
+import CompanySectorService from '../../services/companySectorService';
 
 export default function CompanySector() {
     const [companysectors, setCompanySectors] = useState([]);

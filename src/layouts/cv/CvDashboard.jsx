@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from 'semantic-ui-react'
-import SchoolList from '../pages/SchoolList'
-import SocialMediaList from '../pages/SocialMediaList'
-import WorkPlaceList from '../pages/WorkPlaceList'
-import LanguageList from '../pages/LanguageList'
+import SchoolList from '../../pages/cv/SchoolList'
+import SocialMediaList from '../../pages/cv/SocialMediaList'
+import WorkPlaceList from '../../pages/cv/WorkPlaceList'
+import LanguageList from '../../pages/cv/LanguageList'
 import CvLayout from './CvLayout'
 import { Grid } from 'semantic-ui-react'
-import AblilityList from '../pages/AblilityList'
+import AblilityList from '../../pages/cv/AbilityList'
 
 export default function CvDashboard() {
     return (

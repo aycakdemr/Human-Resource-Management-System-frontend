@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "semantic-ui-react";
-import WorkPlaceService from "../services/workPlaceService";
+import WorkPlaceService from "../../services/workPlaceService";
 
 export default function WorkPlaceList() {
 

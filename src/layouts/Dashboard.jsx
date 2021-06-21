@@ -1,13 +1,12 @@
 import React from "react";
 import { Grid, Button, Container } from "semantic-ui-react";
-import Cities from "./Cities";
-import CompanySector from "./CompanySector";
-import EducationLevel from "./EducationLevel";
-import JobPositions from "./JobPositions";
-import PositionLevels from "./PositionLevels";
-import WayOfWorkings from "./WayOfWorkings";
+import CompanySector from "./adverts/CompanySector";
+import EducationLevel from "./adverts/EducationLevel";
+import JobPositions from "./adverts/JobPositions";
+import PositionLevels from "./adverts/PositionLevels";
+import WayOfWorkings from "./adverts/WayOfWorkings";
 import { Menu } from "semantic-ui-react";
-import JobAdvertisementList from "../pages/JobAdvertisementList";
+import JobAdvertisementList from "../pages/adverts/JobAdvertisementList";
 import { NavLink } from "react-router-dom";
 import { ToastContainer } from 'react-toastify'
 

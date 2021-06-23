@@ -48,7 +48,7 @@ export default function NewAdvert() {
     initialValues: {
       jobTitleId: "",
       description: "",
-     // city: "",
+      cityId: "",
       applicationDeadline: "",
       minSalary: "",
       maxSalary: "",
@@ -59,11 +59,39 @@ export default function NewAdvert() {
     },
     validationSchema: NewAdvertSchema,
     onSubmit: (value) => {
-      value.employerId= 2
-      value.isActive = false;
-      value.createdDate = "2020-10-10";
-      value.quota = 2;
-      JobAdvertService.add(value).then((result) =>
+      let newAdv={
+        employer : {
+            id: 3
+        },
+        active : false,
+        createdDate : "2020-10-10",
+        quota : 2,
+        city : {
+          id: value.cityId
+        },
+        description : value.description,
+        educationLevel :{
+          id : value.educationLevelId
+        },
+        jobPosition : {
+          id : value.jobTitleId
+        },
+        maxSalary : value.maxSalary,
+        minSalary : value.minSalary,
+        positionLevel : {
+          id :value.positionLevelId
+        },
+        wayofworking : {
+          id : value.wayOfWorkingId
+        },
+        workType : {
+          id :value.howToWorkId
+        },
+        applicationDeadline : value.applicationDeadline,
+
+      }
+      
+      JobAdvertService.add(newAdv).then((result) =>
         console.log(result.errors)
       );
     },

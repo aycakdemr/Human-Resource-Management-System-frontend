@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "semantic-ui-react";
+import { Table, Button} from "semantic-ui-react";
+import NewAbility from "./NewAbility";
 
 import AbilityService from '../../services/abilityService';
 
@@ -8,7 +9,7 @@ export default function AbilityList() {
 
     useEffect(() => {
         let abilitiesService = new AbilityService();
-        abilitiesService.getAll().then((result) => setAbilities(result.data.data));
+        abilitiesService.getAllAbilitiesWithJobSeekers().then((result) => setAbilities(result.data.data));
       }, []);
     return (
         <div>
@@ -23,12 +24,13 @@ export default function AbilityList() {
         <Table.Body>
           {abilities.map((ability) => (
             <Table.Row key={ability.id}>
-              <Table.Cell>{ability.ability.abilityName}</Table.Cell>
-              <Table.Cell>{ability.jobSeeker.firstName}</Table.Cell>
+              <Table.Cell>{ability.ability?.abilityName}</Table.Cell>
+              <Table.Cell>{ability.jobSeeker?.firstName}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
+      <NewAbility/>
         </div>
     )
 }

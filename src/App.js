@@ -15,6 +15,7 @@ import CvDashboard from "./layouts/cv/CvDashboard";
 import ConfirmAdvert from "./pages/adverts/ConfirmAdvert";
 import ConfirmAdvertDetail from "./pages/adverts/ConfirmAdvertDetail";
 import { ToastContainer } from 'react-toastify'
+import NewAbility from "./pages/cv/NewAbility";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
         <Route exact path="/newadvert" component={NewAdvert}/>
         <Route exact path="/confirmAdvert" component={ConfirmAdvert}/>
         <Route exact path="/confirmAdvertDetail/:id" component={ConfirmAdvertDetail}/>
+
+
+        
     </div>
   );
 }

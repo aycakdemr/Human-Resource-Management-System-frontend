@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Icon, Label, Menu, Table } from "semantic-ui-react";
+import { Container,  Table } from "semantic-ui-react";
 import JobSeekerService from "../../services/jobSeekerService";
 import { NavbarBrand, Navbar } from "reactstrap";
 

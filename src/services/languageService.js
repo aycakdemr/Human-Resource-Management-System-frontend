@@ -3,12 +3,18 @@ export default class LanguageService{
     getAll(){
         return axios.get("http://localhost:8080/api/languagejobseekers/getall")
     }
-    add(language) {
-        return axios.post("http://localhost:8080/api/languagejobseekers", language);
+    getAllLanguages(){
+        return axios.get("http://localhost:8080/api/languages/getall")
     }
-
-    update(language) {
-        return axios.put("http://localhost:8080/api/languagejobseekers", language);
+    
+    add(language) {
+        return axios.post("http://localhost:8080/api/languagejobseekers/add", language);
+    }
+    getAllLanguageLevels(){
+        return axios.get("http://localhost:8080/api/languagelevels/getall")
+    }
+    update(language,id) {
+        return axios.post("http://localhost:8080/api/languagejobseekers/update?id="+id,language);
     }
 
     delete(id) {

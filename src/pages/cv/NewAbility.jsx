@@ -4,7 +4,7 @@ import AbilityService from "../../services/abilityService";
 import { useFormik } from "formik";
 
 export default function NewAbility() {
-    let abilityService= new AbilityService()
+  let abilityService= new AbilityService()
   const [abilities, setAbilities] = useState([]);
 
   useEffect(() => {
@@ -22,13 +22,23 @@ export default function NewAbility() {
 
   const formik = useFormik({
     initialValues: {
-     jobSeeker : 7,
-      resume : 1,
-      ability :""
+      
+      abilityId :""
     },
     onSubmit: (value) => {
-        abilityService.add(value).then((result) =>
-        console.log(value)
+      let newAbility={
+        ability:{
+          id:value.abilityId
+        },
+        resume :{
+          id : 7
+        },
+        jobSeeker :{
+          id: 7
+        }
+      }
+        abilityService.add(newAbility).then((result) =>
+        console.log(newAbility)
       );
     },
   });
@@ -45,14 +55,14 @@ export default function NewAbility() {
               item
               clearable
               search
-              id="jobTitle"
-              name="jobTitle"
-              label="İş Başlığı"
+              id="abilityId"
+              name="abilityId"
+      
              onChange={(event, data) =>
-                  handleChangeValues(data.value, "ability")
+                  handleChangeValues(data.value, "abilityId")
                 }
                 onBlur={formik.onBlur}
-              value={formik.values.ability}
+              value={formik.values.abilityId}
               options={abilitiesOption}
               placeholder="Yetenek Adı"
             />

@@ -5,6 +5,7 @@ import EducationLevel from "./adverts/EducationLevel";
 import JobPositions from "./adverts/JobPositions";
 import PositionLevels from "./adverts/PositionLevels";
 import WayOfWorkings from "./adverts/WayOfWorkings";
+import Cities from "./adverts/Cities";
 import { Menu } from "semantic-ui-react";
 import JobAdvertisementList from "../pages/adverts/JobAdvertisementList";
 import { NavLink } from "react-router-dom";
@@ -56,6 +57,13 @@ export default function Dashboard() {
 
                 <Menu.Menu>
                   <EducationLevel />
+                </Menu.Menu>
+              </Menu.Item>
+              <Menu.Item>
+                <Menu.Header>Şehirler</Menu.Header>
+
+                <Menu.Menu>
+                  <Cities />
                 </Menu.Menu>
               </Menu.Item>
               <br></br>

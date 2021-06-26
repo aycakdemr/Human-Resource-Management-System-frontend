@@ -14,8 +14,8 @@ export default function Cities() {
   },[]);
   return (
     <div>
-    <Menu vertical inverted>
-    <Dropdown item text='Şehirler'>
+    <Menu vertical >
+    <Dropdown>
       <Dropdown.Menu>
       {cities.map((city) =>(
           <Dropdown.Item>{city.cityName}</Dropdown.Item>

@@ -4,11 +4,11 @@ export default class WorkPlaceService{
         return axios.get("http://localhost:8080/api/workplacesjobseekers/getall")
     }
     add(workplace) {
-        return axios.post("http://localhost:8080/api/workplacesjobseekers", workplace);
+        return axios.post("http://localhost:8080/api/workplacesjobseekers/add", workplace);
     }
 
-    update(workplace) {
-        return axios.put("http://localhost:8080/api/workplacesjobseekers", workplace);
+    update(workplace,id) {
+        return axios.post("http://localhost:8080/api/workplacesjobseekers/update?id="+id,workplace);
     }
 
     delete(id) {

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "semantic-ui-react";
+import { Table,Button } from "semantic-ui-react";
 import SocialMediaService from "../../services/socialMediaService";
+import UpdateSocialMedia from "./UpdateSocialMedia";
+import NewSocialMedia from "./NewSocialMedia";
+
 export default function SocialMediaList() {
 
     const [socialmedias, setSocialMedias] = useState([]);
@@ -17,6 +20,8 @@ export default function SocialMediaList() {
             <Table.HeaderCell>Link</Table.HeaderCell>
             <Table.HeaderCell>Link Türü</Table.HeaderCell>
             <Table.HeaderCell>İş Arayan Adı</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -27,10 +32,16 @@ export default function SocialMediaList() {
               <Table.Cell>{socialmedia.linkType.linkTypeName}</Table.Cell>
 
               <Table.Cell>{socialmedia.jobseeker.firstName}</Table.Cell>
+              <Table.Cell>
+                <Button  size="mini" color="pink" type="submit" name="id" >
+                  Sil
+                </Button></Table.Cell>
+                <Table.Cell><UpdateSocialMedia id={socialmedia.id}/></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
+      <NewSocialMedia/>
         </div>
     )
 }

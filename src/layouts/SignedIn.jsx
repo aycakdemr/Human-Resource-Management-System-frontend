@@ -20,10 +20,11 @@ export default function SignedIn(props) {
           Ayça
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>
+          <DropdownItem as={NavLink}
+                  to="/employeeDetail" >
             Bilgilerim
           </DropdownItem>
-          <br></br>
+          <br></br><br></br>
           <DropdownItem as={NavLink}
                   to="/cvdetail" >
             Cv İşlemleri

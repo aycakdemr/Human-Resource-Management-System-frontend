@@ -16,6 +16,7 @@ import ConfirmAdvert from "./pages/adverts/ConfirmAdvert";
 import ConfirmAdvertDetail from "./pages/adverts/ConfirmAdvertDetail";
 import { ToastContainer } from 'react-toastify'
 import NewAbility from "./pages/cv/NewAbility";
+import EmployeeDetail from "./pages/users/EmployeeDetail";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/newadvert" component={NewAdvert}/>
         <Route exact path="/confirmAdvert" component={ConfirmAdvert}/>
         <Route exact path="/confirmAdvertDetail/:id" component={ConfirmAdvertDetail}/>
+        <Route exact path="/employeeDetail" component={EmployeeDetail}/>
 
 
         

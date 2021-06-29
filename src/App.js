@@ -15,7 +15,10 @@ import ConfirmAdvert from "./pages/adverts/ConfirmAdvert";
 import ConfirmAdvertDetail from "./pages/adverts/ConfirmAdvertDetail";
 import { ToastContainer } from 'react-toastify'
 import EmployeeDetail from "./pages/users/EmployeeDetail";
+import EmployerDetail from "./pages/users/EmployerDetail";
+
 import AdvertsByFilter from "./pages/adverts/AdvertsByFilter";
+import EmployerDetailForAdmin from "./pages/users/EmployerDetailForAdmin";
 
 function App() {
   return (
@@ -36,7 +39,9 @@ function App() {
         <Route exact path="/employeeDetail" component={EmployeeDetail}/>
 
         <Route  path='/adverts/filter/:jobPositionId/:companySectorId/:wayOfWorkingId/:positionLevelId/:educationLevelId/:cityId' component={AdvertsByFilter}/>
-
+        <Route exact path="/employerdetail/:id" component={EmployerDetail}/>
+        <Route exact path="/employerdetailforadmin/:id" component={EmployerDetailForAdmin}/>
+        
         
     </div>
   );

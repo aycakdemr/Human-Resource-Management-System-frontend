@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table } from "semantic-ui-react";
+import { Container, Table,Button } from "semantic-ui-react";
 import EmployerService from "../../services/employerService";
 import { NavbarBrand, Navbar } from "reactstrap";
 import { useSelector } from 'react-redux';
+import { NavLink } from "react-router-dom";
 
 export default function EmployerList() {
   const [employers, setEmployers] = useState([]);
@@ -26,6 +27,8 @@ export default function EmployerList() {
               <Table.HeaderCell>Web Sitesi</Table.HeaderCell>
               <Table.HeaderCell>Telefon</Table.HeaderCell>
               <Table.HeaderCell>Sektör</Table.HeaderCell>
+              <Table.HeaderCell></Table.HeaderCell>
+              <Table.HeaderCell></Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
@@ -36,6 +39,24 @@ export default function EmployerList() {
                 <Table.Cell>{employer.webAddress}</Table.Cell>
                 <Table.Cell>{employer.phoneNumber}</Table.Cell>
                 <Table.Cell>{employer.companysector.name}</Table.Cell>
+                <Table.Cell><Button
+                            className="mt-4"
+                            color="primary"
+                            as={NavLink}
+                            to={`/employerdetail/${employer?.id}`}
+                          >
+                            
+                            İncele
+                          </Button></Table.Cell>
+                          <Table.Cell><Button
+                            className="mt-4"
+                            color="orange"
+                            as={NavLink}
+                            to={`/employerdetailforadmin/${employer?.id}`}
+                          >
+                            
+                            Onayla
+                          </Button></Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>

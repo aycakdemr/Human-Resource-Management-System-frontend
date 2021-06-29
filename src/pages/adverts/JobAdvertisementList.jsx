@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavbarBrand, Navbar } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import { Button} from "semantic-ui-react";
+import { Button,Pagination} from "semantic-ui-react";
 import {addToList} from "../../store/actions/favAdvertActions"
 import {toast} from "react-toastify"
 
@@ -15,6 +15,9 @@ import {
 import { useDispatch } from "react-redux";
 import JobAdvertisementService from "../../services/jobAdvertisementService";
 export default function JobAdvertisementList() {
+
+  let jobAdvertisementService = new JobAdvertisementService();
+  const [activePage, setActivePage] = useState(1);
   const dispatch = useDispatch()
     const [jobadvertisements, setJobAdvertisements] = useState([]);
 
@@ -26,10 +29,17 @@ export default function JobAdvertisementList() {
     useEffect(() => {
         let jobAdvertisementService = new JobAdvertisementService();
         jobAdvertisementService
-          .getAllActivetedTrue()
+          .getAllActiveByPage(activePage,5)
           .then((result) => setJobAdvertisements(result.data.data))
           
       },[]);
+
+      const handlePaginationChanging = (e, { activePage }) => {
+        setActivePage(activePage);
+        jobAdvertisementService
+          .getAllActiveByPage(activePage, 5)
+          .then((result) => setJobAdvertisements(result.data.data));
+      };
     return (
         <div>
           <Container>
@@ -99,7 +109,11 @@ export default function JobAdvertisementList() {
                 </Row>
                  ))}
               </Row>
-             
+              <Pagination
+        defaultActivePage={1}
+        totalPages={4}
+        onPageChange={handlePaginationChanging}
+      />
             </Container>
            
         </div>

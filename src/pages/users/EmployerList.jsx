@@ -10,7 +10,7 @@ export default function EmployerList() {
   console.log(employers)
   useEffect(() => {
     let employersService = new EmployerService();
-    employersService.getAll().then((result) => setEmployers(result.data.data));
+    employersService.getAllByEmployerCase().then((result) => setEmployers(result.data.data));
   }, []);
   return (
     <div>

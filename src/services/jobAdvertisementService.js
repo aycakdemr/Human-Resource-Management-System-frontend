@@ -20,6 +20,12 @@ export default class JobAdvertisementService{
     getByEmployerId(id){
         return axios.get("http://localhost:8080/api/jobadvertisements/getByEmployerId?id="+id)
     }
+    getAllActiveByPage(number,page){
+        return axios.get("http://localhost:8080/api/jobadvertisements/getByisActive?pageNumber=" +
+        number +
+        "&pageSize=" +
+        page)
+    }
     
     add(adv) {
         return axios.post("http://localhost:8080/api/jobadvertisements/add", adv);

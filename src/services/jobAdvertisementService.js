@@ -14,8 +14,8 @@ export default class JobAdvertisementService{
     getById(id){
         return axios.get("http://localhost:8080/api/jobadvertisements/getbyId?id="+id)
     }
-    getByFilter(jobPositionId,companySectorId,wayOfWorkingId,positionLevelId,educationLevelId,cityId){
-        return axios.get(`http://localhost:8080/api/jobadvertisements/getbyFilter?cityId=${cityId}&companySectorId=${companySectorId}&educationLevelId=${educationLevelId}&jobPositionId=${jobPositionId}&positionLevelId=${positionLevelId}&wayOfWorkingId=${wayOfWorkingId}`)
+    getByFilter(number,page,filter){
+        return axios.post(`http://localhost:8080/api/jobadvertisements/getbyFilter?pageNo=${number}&pageSize=${page}`,filter)
     }
     getByEmployerId(id){
         return axios.get("http://localhost:8080/api/jobadvertisements/getByEmployerId?id="+id)

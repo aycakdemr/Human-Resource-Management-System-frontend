@@ -108,12 +108,14 @@ export default function JobAdvertisementList() {
                   <br></br>
                 </Row>
                  ))}
-              </Row>
-              <Pagination
+                 
+                 <Pagination
         defaultActivePage={1}
         totalPages={4}
         onPageChange={handlePaginationChanging}
       />
+              </Row>
+              
             </Container>
            
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavbarBrand, Navbar } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import { Button} from "semantic-ui-react";
+import { Button,Pagination} from "semantic-ui-react";
 import {addToList} from "../../store/actions/favAdvertActions"
 import {toast} from "react-toastify"
 import { useParams } from 'react-router';
@@ -18,13 +18,22 @@ import { useDispatch } from "react-redux";
 import JobAdvertisementService from "../../services/jobAdvertisementService";
 
 export default function AdvertsByFilter() {
-
+const [activePage, setActivePage] = useState(1);
+let jobAdvertisementService = new JobAdvertisementService();
     let { jobPositionId } = useParams();
     let { companySectorId } = useParams();
     let { wayOfWorkingId } = useParams();
     let { positionLevelId } = useParams();
     let { educationLevelId } = useParams();
     let { cityId } = useParams();
+    let filter :{
+      cityId : cityId,
+      companySectorId: companySectorId,
+      educationLevelId :educationLevelId,
+      jobPositionId : jobPositionId,
+      positionLevelId :positionLevelId,
+      wayOfWorkingId:wayOfWorkingId
+    }
     const dispatch = useDispatch()
     const [jobadvertisements, setJobAdvertisements] = useState([]);
 
@@ -36,11 +45,17 @@ export default function AdvertsByFilter() {
     useEffect(() => {
         let jobAdvertisementService = new JobAdvertisementService();
         jobAdvertisementService
-          .getByFilter(jobPositionId,companySectorId,wayOfWorkingId,positionLevelId,educationLevelId,cityId)
+          .getByFilter(activePage,5,filter)
           .then((result) => setJobAdvertisements(result.data.data))
           
       },[]);
       console.log(jobadvertisements)
+      const handlePaginationChanging = (e, { activePage }) => {
+        setActivePage(activePage);
+        jobAdvertisementService
+          .getByFilter(activePage,5,filter)
+          .then((result) => setJobAdvertisements(result.data.data));
+      };
     return (
         <div>
             <Container>
@@ -120,6 +135,11 @@ export default function AdvertsByFilter() {
                 </Row>
                  ))}
               </Row>
+              <Pagination
+        defaultActivePage={1}
+        totalPages={4}
+        onPageChange={handlePaginationChanging}
+      />
           </Grid.Column>
         </Grid.Row>
       </Grid>

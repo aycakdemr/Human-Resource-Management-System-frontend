@@ -10,7 +10,7 @@ export default function SchoolList() {
 
     useEffect(() => {
         let schoolService = new SchoolService();
-        schoolService.getAll().then((result) => setSchools(result.data.data));
+        schoolService.getSchoolsByJobSeekerId(7).then((result) => setSchools(result.data.data));
       }, []);
     return (
         <div>

@@ -43,7 +43,7 @@ export default function NewSchool() {
         resume: {
           id: 7,
         },
-        jobseeker: {
+        jobSeeker: {
           id: 7,
         },
       };

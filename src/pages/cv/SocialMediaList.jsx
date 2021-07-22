@@ -10,7 +10,7 @@ export default function SocialMediaList() {
 
     useEffect(() => {
         let socialMediaService = new SocialMediaService();
-        socialMediaService.getAll().then((result) => setSocialMedias(result.data.data));
+        socialMediaService.getSocialMediaByJobSeekerId(7).then((result) => setSocialMedias(result.data.data));
       }, []);
     return (
         <div>

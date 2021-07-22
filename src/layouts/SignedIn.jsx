@@ -26,7 +26,7 @@ export default function SignedIn(props) {
           </DropdownItem>
           <br></br><br></br>
           <DropdownItem as={NavLink}
-                  to="/cvdetail" >
+                  to="/resume" >
             Cv İşlemleri
           </DropdownItem>
           <br></br>

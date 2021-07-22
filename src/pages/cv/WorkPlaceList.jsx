@@ -10,7 +10,7 @@ export default function WorkPlaceList() {
 
     useEffect(() => {
         let workPlaceService = new WorkPlaceService();
-        workPlaceService.getAll().then((result) => setWorkPlaces(result.data.data));
+        workPlaceService.getWorkPlaceByJobSeekerId(7).then((result) => setWorkPlaces(result.data.data));
       }, []);
     return (
         <div>

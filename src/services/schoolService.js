@@ -16,7 +16,9 @@ export default class SchoolService{
     update(school,id) {
         return axios.post("http://localhost:8080/api/schooljobseekers/update?id="+id,school);
     }
-
+    getSchoolsByJobSeekerId(id){
+        return axios.get("http://localhost:8080/api/schooljobseekers/getbyJobSeekerId?id="+id)
+    }
     delete(id) {
         return axios.delete(`http://localhost:8080/api/schooljobseekers?id=${ id }`);
     }

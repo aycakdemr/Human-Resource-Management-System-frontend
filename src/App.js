@@ -19,6 +19,7 @@ import EmployerDetail from "./pages/users/EmployerDetail";
 
 import AdvertsByFilter from "./pages/adverts/AdvertsByFilter";
 import EmployerDetailForAdmin from "./pages/users/EmployerDetailForAdmin";
+import Resume from "./pages/cv/Resume";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/adverts" component={DashboardForFilter}/>
         <Route  exact path="/adverts/:id" component={AdvertDetail}/>
         <Route path="/cvdetail" component={CvDashboard}/>
+        <Route path="/resume" component={Resume}/>
         <Route exact path="/newadvert" component={NewAdvert}/>
         <Route exact path="/confirmAdvert" component={ConfirmAdvert}/>
         <Route exact path="/confirmAdvertDetail/:id" component={ConfirmAdvertDetail}/>

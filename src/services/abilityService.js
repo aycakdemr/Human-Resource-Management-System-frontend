@@ -6,7 +6,9 @@ export default class AbilityService{
     getAllAbilities(){
         return axios.get("http://localhost:8080/api/abilities/getall")
     }
-    
+    getAbilitiesByJobSeekerId(id){
+        return axios.get("http://localhost:8080/api/abilityjobseekers/getbyJobSeekerId?id="+id)
+    }
     add(ability) {
         return axios.post("http://localhost:8080/api/abilityjobseekers/add", ability);
     }

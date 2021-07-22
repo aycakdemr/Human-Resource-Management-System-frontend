@@ -17,6 +17,9 @@ export default class LanguageService{
         return axios.post("http://localhost:8080/api/languagejobseekers/update?id="+id,language);
     }
 
+    getLanguagesByJobSeekerId(id){
+        return axios.get("http://localhost:8080/api/languagejobseekers/getbyJobSeekerId?id="+id)
+    }
     delete(id) {
         return axios.delete(`http://localhost:8080/api/languagejobseekers?id=${ id }`);
     }

@@ -13,7 +13,7 @@ export default function AbilityList() {
   useEffect(() => {
     let abilitiesService = new AbilityService();
     abilitiesService
-      .getAllAbilitiesWithJobSeekers()
+      .getAbilitiesByJobSeekerId(7)
       .then((result) => setAbilities(result.data.data));
   }, []);
 

@@ -9,7 +9,7 @@ export default function LanguageList() {
 
     useEffect(() => {
         let languagesService = new LanguageService();
-        languagesService.getAll().then((result) => setLanguagaes(result.data.data));
+        languagesService.getLanguagesByJobSeekerId(7).then((result) => setLanguagaes(result.data.data));
       }, []);
     return (
         <div>
